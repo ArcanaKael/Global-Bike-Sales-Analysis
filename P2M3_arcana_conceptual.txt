@@ -1,0 +1,47 @@
+=============================================================================================================
+
+This file contains answers to conceptual problems.
+
+=============================================================================================================
+
+1. Jelaskan apa yang dimaksud dengan NoSQL menggunakan pemahaman yang kalian ketahui!
+    NoSQL adalah jenis database yang tidak menggunakan struktur tabel seperti di database relasional (seperti PostgreSQL atau MySQL). 
+    Biasanya, NoSQL digunakan kalau data yang disimpan bentuknya lebih fleksibel, misalnya berupa dokumen JSON, key-value, grafik, atau kolom. 
+    NoSQL cocok dipakai kalau aplikasinya butuh menyimpan data dalam jumlah besar dengan struktur yang bisa berubah-ubah, 
+    dan juga ketika performa bacanya atau tulis harus cepat misalnya untuk aplikasi real-time.
+
+2. Jelaskan kapan harus menggunakan NoSQL dan Relational Database Management System!
+    > NoSQL dipakai ketika datanya gak selalu terstruktur dengan jelas artinya bisa berubah-ubah bentuknya, jumlah datanya sangat besar
+    dan kita butuh akses cepat serta flexible lalu ketika datanya scalable dan aplikasinya real time.
+    > RDBMS dipakai ketika datanya terstruktur dengan jelas, punya relasi antar tabel dan butuh transaksi yang konsisten
+    contohnya pada sistem keuangan atau inventory karena RDBMS mendukung SQL dengan query yang kompleks.
+
+3. Sebutkan contoh 2 tools/platform NoSQL selain ElasticSearch beserta keunggulan tools/platform tersebut!
+    1. MongoDB --> keunggulannya dapat menyimpan data dalam format BSON (JSON-like) yang lebih flexible. Querynya mirip SQL
+    sehingga lebih mudah bagi kita untuk menyesuaikan. keunggulan lainnya adalah lebih flexible strukturnya sehingga cocok 
+    untuk aplikasi yang datanya sering berubah. Selain itu mudah diskalakan secara horizonal sehingga performanya baik 
+    walaupun menangani data yang besar.
+    2. Redis --> keunggulan dari performanya yang sangat cepat karena bekerja sepenuhnya di memori. Lebih cepat membaca
+    dan menulis data sehingga ideal untuk use case seperti caching dan aplikasi real-time sehingga cocok untuk kasus yang butuh
+    respon cepat seperti sistem antrean dan live chat. Mendukung berbagai struktur data seperti list, set dan hash 
+    menjadikan Redis lebih flexible walaupun berbasis key-value.
+
+4. Jelaskan apa yang Anda ketahui dari Airflow menggunakan pemahaman dan bahasa Anda sendiri!
+    airflow adalah tools open source untuk mengautomasi alur kerja (workflow) untuk proses data. Di airflow kita akan 
+    membuat alur tugas yang disebut DAG dimana biasanya berisi langkah-langkah proses dari mengambil data, melakukan cleaning data,
+    menyimpan data dan mengirim data ke sistem lain serta bisa menjadwalkan tugas secara flexible.
+
+5. Jelaskan apa yang Anda ketahui dari Great Expectations menggunakan pemahaman dan bahasa Anda sendiri!
+    Great Expectations adalah tools open source untuk melakukan validasi kualitas dari data. Jadi sebelum data digunakan untuk
+    dianalisis lebih lanjut, kita perlu memastikan dulu apakah data tersebut sudah benar-benar clean atau sesuai dengan ekspektasi
+    yang kita tentukan. Sehingga tools ini membantu agar data kita lebih terkontrol dan tidak error karena data masih tidak sesuai 
+    standar.
+
+6. Jelaskan apa yang Anda ketahui dari Batch Processing menggunakan pemahaman dan bahasa Anda sendiri (Definisi, Contoh Kasus Penggunaan, Tools, dll) !
+    batch processing adalah cara memproses data dalam jumlah besar secara sekaligus dalam satu batch 
+    dan biasanya dijalankan secara terjadwal. Jadi data dikumpulkan terlebih dahulu lalu diproses secara bersama-sama pada 
+    waktu tertentu.
+    > contoh kasus penggunaan seperti mengolah laporan gaji bulanan karyawan, mengolah data penjualan harian menjadi laporan mingguan atau bulanan,
+    menyinkronisasi data antara dua sistem dalam jumlah yang besar secara berkala
+    > tools yang dipakai adalah apache airflow (untuk menjadwalkan dan mengatur alur kerja batch secara otomatis), apache spark (untuk
+    memproses data besar secara paralel).
