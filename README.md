@@ -1,46 +1,71 @@
-# Judul Project
-### *Global Bike Sales Analysis*
+# 🚴‍♂️ Global Bike Sales Analysis
 
-## Repository Outline
+## 📁 Repository Structure
 ```
-1. description.md                       : Penjelasan umum terkait project dan hasil analisis
-2. images folder                        : Folder berisi screenshot visualisasi dashboard di Kibana
-3. P2M3_arcana_DAG.py                   : Berisi definisi DAG yang digunakan untuk mengelola alur kerja ETL (Extract, Transform, Load)
-4. P2M3_arcana_GX.ipynb                 : Notebook Jupyter yang mendokumentasikan proses pembersihan data dengan menggunakan Great Expectations.
-5. P2M3_arcana_data_raw.csv             : Dataset mentah penjualan sepeda yang digunakan
-6. P2M3_arcana_data_clean.csv           : Dataset hasil cleaning
-7. P2M3_arcana_ddl.txt                  : Skrip SQL untuk membuat dan mendefinisikan tabel dalam basis data PostgreSQL.
-8. P2M3_arcana_conceptual.txt           : Berisi jawaban conceptual problem.
-9. P2M3_arcana_DAG_graph.jpg            : Screenshot yang menampilkan alur graph dari DAG yang dibuat
+1. kibana_dashboard_screenshots folder  : Folder berisi screenshot visualisasi dashboard di Kibana
+2. bike_sales_etl_dag.py                : Berisi definisi DAG yang digunakan untuk mengelola alur kerja ETL (Extract, Transform, Load)
+3. data_validation_GX.ipynb             : Notebook Jupyter yang mendokumentasikan proses pembersihan data dengan menggunakan Great Expectations.
+4. data_raw.csv                         : Dataset mentah penjualan sepeda yang digunakan
+5. data_clean.csv                       : Dataset hasil cleaning dari proses DAG
+6. query_ddl.txt                        : Skrip SQL untuk membuat dan mendefinisikan tabel dalam basis data PostgreSQL.
+7. conceptual_qna.txt                   : Berisi jawaban conceptual problem.
+8. DAG_workflow_graph.png              : Screenshot yang menampilkan alur graph dari DAG yang dibuat
 ```
 
-## Problem Background
-Proyek ini dibuat sebagai bagian dari proyek pribadi untuk menganalisis data penjualan sepeda dari tahun 2013 hingga 2016. Tujuannya adalah untuk memahami kinerja penjualan, perilaku pelanggan, tren pasar, serta optimalisasi stok produk. Dataset mengenai penjualan sepeda ini memberikan wawasan penting terkait performa penjualan, kebutuhan pasar, dan preferensi pelanggan. Melalui analisis ini, perusahaan dapat mengambil keputusan bisnis yang lebih tepat guna meningkatkan profitabilitas dan efisiensi operasional.
+---
 
-## Project Output
-Visualisasi dashboard dari Kibana yang terdiri dari:
-- Tren pendapatan tahunan
-- Produk dengan profit tertinggi
-- Segmentasi pelanggan berdasarkan usia dan gender
-- Distribusi geografis berdasarkan negara dan negara bagian
-- Perbandingan rata-rata cost dan profit tiap produk
+## 🧩 Problem Background
 
-## Data
-- Sumber: [kaggle dataset](https://www.kaggle.com/datasets/sadiqshah/bike-sales-in-europe) 
-- Jumlah: raw data (113036 baris & 18 kolom) setelah dibersihkan menjadi 9,866 baris dan 18 kolom
-- Karakteristik: Data bersih, tidak terdapat missing values. Namun ada duplikat sehingga dilakukan drop baris yang duplikat di dag.py
-- Periode data: Tahun 2013–2016
+Proyek ini bertujuan untuk menganalisis data penjualan sepeda secara global selama periode 2013 hingga 2016. Fokus utamanya adalah menggali wawasan bisnis dari perilaku pelanggan, tren penjualan, distribusi geografis, hingga efisiensi stok dan profitabilitas produk.
 
-## Method
-- ETL (Extract, Transform, Load) dari PostgreSQL ke Elasticsearch.
-- Pembersihan data menggunakan Great Expectations.
-- Pembuatan Directed Acyclic Graph (DAG) menggunakan Apache Airflow.
+Dengan menyusun pipeline ETL otomatis, pembersihan data berbasis validasi eksplisit, dan visualisasi interaktif menggunakan Kibana, proyek ini menyajikan pendekatan end-to-end yang tidak hanya teknis, tetapi juga relevan secara bisnis.
 
-## Stacks
-- PostgreSQL
-- Elasticsearch
-- Great Expectations
-- Apache Airflow
+---
 
-## Reference
-[ahmedterry bike-sale-analysis](https://www.kaggle.com/code/ahmedterry/bike-sales-analysis)
+## 📊 Project Output
+
+Output utama berupa dashboard interaktif di **Kibana**, meliputi:
+
+- 📈 *Tren Pendapatan Tahunan*  
+- 💰 *Produk dengan Profit Tertinggi*  
+- 🧑‍🤝‍🧑 *Segmentasi Pelanggan Berdasarkan Usia & Gender*  
+- 🌍 *Distribusi Geografis Penjualan berdasarkan Negara dan Negara Bagian*  
+- ⚖️ *Perbandingan Rata-rata Cost dan Profit per Produk*
+
+---
+
+## 📦 Dataset
+
+- **Sumber**: [Kaggle - Bike Sales in Europe](https://www.kaggle.com/datasets/sadiqshah/bike-sales-in-europe)  
+- **Ukuran Dataset**:  
+  - Sebelum cleaning: 113,036 baris, 18 kolom  
+  - Setelah cleaning: 9,866 baris, 18 kolom  
+- **Kondisi Data**:  
+  - Tidak ada missing values  
+  - Duplikasi dihapus melalui proses DAG  
+- **Periode Waktu**: 2013 – 2016
+
+---
+
+## 🔧 Methods & Tools
+
+- **ETL Automation**: PostgreSQL → Airflow → Elasticsearch  
+- **Data Validation**: Great Expectations  
+- **Orkestrasi Workflow**: Apache Airflow  
+- **Visualisasi Data**: Kibana
+
+---
+
+## 🛠️ Tech Stack
+
+- PostgreSQL  
+- Apache Airflow  
+- Great Expectations  
+- Elasticsearch  
+- Kibana
+
+---
+
+## 📚 Reference
+
+- [Ahmed Terry – Bike Sales Analysis (Kaggle)](https://www.kaggle.com/code/ahmedterry/bike-sales-analysis)
